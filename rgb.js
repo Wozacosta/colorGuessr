@@ -16,7 +16,7 @@ function play(){
     colorDivs = document.querySelectorAll(".row div");
     nbOfSquares = colorDivs.length;
     document.querySelector("#message").textContent = "";
-    document.querySelector("header").style.background = "yellowgreen";
+    document.querySelector("header").style.background = "space";
     document.querySelector("nav > p").textContent = "new colors";
 
     /* Sets colorToGuess rgb numeric values tips in the top header */
