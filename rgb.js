@@ -24,6 +24,8 @@ function play(){
     document.querySelector("#green").textContent = colorToGuess.g;
     document.querySelector("#blue").textContent = colorToGuess.b;
 
+    console.log("color2guess = " + colorToGuess.r + "," + colorToGuess.g + "," + colorToGuess.b);
+
 
     /*
      ASSIGNS RANDOM COLORS TO DIV
@@ -55,6 +57,7 @@ function play(){
                 }
             });
         }
+        console.log("end of play");
 }
 
 
@@ -91,7 +94,9 @@ difficulties[0].addEventListener("click", function(){
     var secondRow = document.querySelectorAll(".container > div")[1];
     secondRow.classList.remove("row");
     secondRow.style.opacity = 0;
-
+    for (var div of colorDivs) {
+        div.classList.remove("clicked");
+    }
     play();
 });
 
@@ -103,7 +108,9 @@ difficulties[1].addEventListener("click", function(){
     var secondRow = document.querySelectorAll(".container > div")[1];
     secondRow.classList.add("row");
     secondRow.style.opacity = 1;
-
+    for (var div of colorDivs) {
+        div.classList.remove("clicked");
+    }
     play();
 });
 
