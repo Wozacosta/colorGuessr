@@ -84,7 +84,7 @@ nav>p, #difficulty {
 
 .selected{
     color: white;
-    background: darkslategray; /* Same as in header and nav */
+    background: #6e0031;; /* Same as in header and nav */
 }
 
 .container{
