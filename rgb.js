@@ -1,10 +1,10 @@
-var colorToGuess = getRandomColor();
-var inGame = true;
-var randomDivNumber; /* Gives us which div square is the correct one, 0-2 or 0-5 depending on easy/hard mode */
-var colorDivs; /* Coloured Div Squares */
-var nbOfSquares; /* Number of square to guess from */
-var wonAudio = new Audio('victory.wav');
-var clickAudio = new Audio('click.wav');
+var colorToGuess     = getRandomColor();
+var inGame           = true;
+var randomDivNumber;  /* Gives us which div square is the correct one, 0-2 or 0-5 depending on easy/hard mode */
+var colorDivs;        /* Coloured Div Squares */
+var nbOfSquares;      /* Number of square to guess from */
+var wonAudio         = new Audio('victory.wav');
+var clickAudio       = new Audio('click.wav');
 
 /* First run of the game when page loads */
 play();
@@ -51,6 +51,7 @@ function play(){
 /*  ------------------ After player clicks on the correct div square  -------------------------------------*/
 function won(){
     if (inGame) { // Check if we're playing the game.
+        inGame = false;
         wonAudio.play();
         document.querySelector("#message").innerHTML = "<span class=\"display-large\">Correct!</span>";
         document.querySelector("header").style.background = colorToGuess.hexa;
@@ -59,7 +60,6 @@ function won(){
             div.classList.remove("clicked");
             div.style.background = colorToGuess.hexa;
         }
-        inGame = false;
     }
 }
 

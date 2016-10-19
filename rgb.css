@@ -89,10 +89,6 @@ nav>p, #difficulty p, .row div{
     flex-grow: 1;
 }
 
-#difficulty p:first-child{
-    margin-right: 20px;
-}
-
 nav>p:hover, #difficulty p:hover{
     text-shadow: 2px 2px 30px #6E0031;
 }
