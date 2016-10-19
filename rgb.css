@@ -1,6 +1,6 @@
 body{
     font-family: 'Lato', serif;
-    background: #232323;
+    background: #6E0031;
     box-sizing: border-box;
     margin: 0;
 }
@@ -38,7 +38,7 @@ header h1{
 
 nav{
     background: white;
-    color: #232323;
+    color: #6E0031;
 
     text-align: center;
 
@@ -60,6 +60,9 @@ nav>p, #difficulty {
     font-weight: 600;
     font-size: 2rem;
     flex-grow: 1;
+}
+nav>p, #difficulty p, .row div{
+    cursor: pointer;
 }
 
 #message{
@@ -85,9 +88,13 @@ nav>p, #difficulty {
     margin-right: 20px;
 }
 
+nav>p:hover, #difficulty p:hover{
+    color: #31AE59;
+}
+
 .selected{
     color: white;
-    background: #232323;; /* Same as in header and nav */
+    background: #6E0031;; /* Same as in header and nav */
 }
 
 .container{
@@ -120,14 +127,28 @@ nav>p, #difficulty {
 @media (max-width: 700px), handheld{
     header h2{
         display: none;
-        border: 3px solid red;
+        /*border: 3px solid red;*/
     }
+
+    header h1{
+        font-size: 3rem;
+    }
+
     .display-large {
         display: none;
     }
     .row{
         margin-bottom: 0px;
         justify-content:  center;
+    }
+
+    #message{
+        display: none;
+    }
+
+    nav > p{
+        width: 100%;
+        text-align: center;
     }
 
     .row div{
