@@ -7,14 +7,13 @@ var nbOfSquares; /* Number of square to guess from */
 /* First run of the game when page loads */
 play();
 
-/* Main function */
+/* ---------------------------------------- Main function  ------------------------------------- */
 function play(){
     inGame = true;
     colorToGuess = getRandomColor();
     colorDivs = document.querySelectorAll(".row div");
     nbOfSquares = colorDivs.length;
     document.querySelector("#message").textContent = "";
-    document.querySelector("header").style.background = "space";
     document.querySelector("nav > p").innerHTML = "new<span class=\"display-large\"> colors</span>";
 
     /* Sets colorToGuess rgb numeric values tips in the top header */
@@ -44,10 +43,9 @@ function play(){
             }
         });
     }
-
 }
 
-/* After player clicks on the correct div square */
+/*  ------------------ After player clicks on the correct div square  -------------------------------------*/
 function won(){
     if (inGame) { // Check if we're playing the game.
         document.querySelector("#message").innerHTML = "<span class=\"display-large\">Correct!</span>";
@@ -61,11 +59,12 @@ function won(){
     }
 }
 
-/*  Manages the NEW COLORS / PLAY AGAIN   */
+/*   ----------- Manages the NEW COLORS / PLAY AGAIN ------------------------------------- */
 var newGame = document.querySelector("nav > p");
 newGame.addEventListener("click", play);
 
-/*   Manages easy / hard
+
+/*   ------------ Manages easy / hard -------------------------------------
 *       the class .row : display the colored divs + adds them to colorDivs
 *       if easy -> only first row gets a .row class
 *       if hard -> both rows get a .row class
@@ -105,7 +104,7 @@ difficulties[1].addEventListener("click", function(){
 });
 
 
-/* -------------- UTIL FUNCTIONS ----------- */
+/* ------------------------------- UTIL FUNCTIONS --------------------------------------------- */
 
 function getRandomOctet(){
     return Math.floor(Math.random() * (256));
