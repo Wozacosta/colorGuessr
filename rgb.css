@@ -1,62 +1,65 @@
 body{
     font-family: 'Lato', serif;
-    background: #6e0031;
+    background: #232323;
     box-sizing: border-box;
+    margin: 0;
 }
 
 #red{
-    text-shadow: 2px 2px 2px red;
+    text-shadow: 2px 2px 12px red;
 }
 #green{
-    text-shadow: 2px 2px 2px green;
+    text-shadow: 2px 2px 12px green;
 }
 #blue{
-    text-shadow: 2px 2px 2px blue;
+    text-shadow: 2px 2px 12px blue;
 }
 
 header{
     background: space;
     text-transform: uppercase;
     color: white;
-    font-size: 5rem;
+    font-size: 1.5rem;
     text-align: center;
     padding: 1% 0;
     text-shadow: 3px 3px 30px rgba(0,0,0,0.7); /* Giving dark shadow, in case background is white, to make text visible */
 }
 
 header h2, header h1{
+    font-weight: 400;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 header h1{
-    font-size: 7rem;
+    font-size: 4rem;
 }
+
 
 nav{
     background: white;
-    color: darkslategray;
+    color: #232323;
 
     text-align: center;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
-    margin: 0px auto;
+    width: 100%;
+    margin: 0;
 
 }
 
 nav *{
-
-
     margin: 0;
-
 }
 
 nav>p, #difficulty {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 2rem;
+    flex-grow: 1;
 }
 
 #message{
@@ -64,18 +67,18 @@ nav>p, #difficulty {
     text-transform: none;
     font-size: 1.5rem;
     font-weight: none;
-    /*border: 1px solid red;*/
     padding-top: 5px;
     text-align: center;
-
 }
 
 #difficulty{
     display: flex;
+    flex-wrap: wrap;
 }
 
 #difficulty p{
     padding: 0 5px;
+    flex-grow: 1;
 }
 
 #difficulty p:first-child{
@@ -84,34 +87,52 @@ nav>p, #difficulty {
 
 .selected{
     color: white;
-    background: #6e0031;; /* Same as in header and nav */
+    background: #232323;; /* Same as in header and nav */
 }
 
 .container{
-    /*border: 1px solid yellow;*/
     text-align: center;
     margin-top: 20px;
 
 }
 
 .row{
-    /*border: 2px solid pink;*/
+    max-width: 600px;
+    margin: 0 auto 20px;
+
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .row div{
-    width: 150px;
+    width: 30%;
     height: 150px;
-    /*background: red;*/
-    /*border: 1px solid blue;*/
-    margin-right: 20px;
+    /*margin-right: 20px;*/
     border-radius: 15px;
     transition: opacity 2s;
-
 }
 
 .clicked{
     opacity: 0;
+}
+
+@media (max-width: 700px), handheld{
+    header h2{
+        display: none;
+        border: 3px solid red;
+    }
+    .display-large {
+        display: none;
+    }
+    .row{
+        margin-bottom: 0px;
+        justify-content:  center;
+    }
+
+    .row div{
+        width: 33%;
+        border-radius: 0px;
+    }
+
 }

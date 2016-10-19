@@ -17,7 +17,7 @@ function play(){
     nbOfSquares = colorDivs.length;
     document.querySelector("#message").textContent = "";
     document.querySelector("header").style.background = "space";
-    document.querySelector("nav > p").textContent = "new colors";
+    document.querySelector("nav > p").innerHTML = "new<span class=\"display-large\"> colors</span>";
 
     /* Sets colorToGuess rgb numeric values tips in the top header */
     document.querySelector("#red").textContent = colorToGuess.r;
@@ -65,7 +65,7 @@ function play(){
 
 function won(){
     if (inGame) { // Check if we're playing the game.
-        document.querySelector("#message").textContent = "Correct!";
+        document.querySelector("#message").innerHTML = "<span class=\"display-large\">Correct!</span>";
         document.querySelector("header").style.background = colorToGuess.hexa;
         document.querySelector("nav > p").textContent = "play again?";
         for (var div of colorDivs) {
