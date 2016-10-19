@@ -9,10 +9,10 @@ body{
     text-shadow: 2px 2px 12px red;
 }
 #green{
-    text-shadow: 2px 2px 12px green;
+    text-shadow: 2px 2px 12px #00ee00;
 }
 #blue{
-    text-shadow: 2px 2px 12px blue;
+    text-shadow: 2px 2px 12px #0d3bff;
 }
 
 header{
@@ -124,7 +124,7 @@ nav>p:hover, #difficulty p:hover{
     opacity: 0;
 }
 
-@media (max-width: 700px), handheld{
+@media (max-width: 800px), handheld{
     header h2{
         display: none;
         /*border: 3px solid red;*/
@@ -156,4 +156,22 @@ nav>p:hover, #difficulty p:hover{
         border-radius: 0px;
     }
 
+    .row:first-child div:first-child{
+        border-top-left-radius: 20px;
+    }
+    .row:first-child div:last-child{
+        border-top-right-radius: 20px;
+    }
+    .row:last-child div:first-child{
+        border-bottom-left-radius: 20px;
+    }
+    .row:last-child div:last-child{
+        border-bottom-right-radius: 20px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 800px){
+    .row div{
+        height: 100px;
+    }
 }
