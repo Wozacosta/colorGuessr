@@ -23,6 +23,8 @@ header{
     text-align: center;
     padding: 1% 0;
     text-shadow: 3px 3px 30px rgba(0,0,0,0.7); /* Giving dark shadow, in case background is white, to make text visible */
+    background: #1c3030;
+    transition: background 2s;
 }
 
 header h2, header h1{
@@ -92,12 +94,12 @@ nav>p, #difficulty p, .row div{
 }
 
 nav>p:hover, #difficulty p:hover{
-    color: #31AE59;
+    text-shadow: 2px 2px 30px #6E0031;
 }
 
 .selected{
     color: white;
-    background: #6E0031;; /* Same as in header and nav */
+    background: #6E0031; /* Same as in header and nav */
 }
 
 

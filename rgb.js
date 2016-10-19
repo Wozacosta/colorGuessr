@@ -3,6 +3,8 @@ var inGame = true;
 var randomDivNumber; /* Gives us which div square is the correct one, 0-2 or 0-5 depending on easy/hard mode */
 var colorDivs; /* Coloured Div Squares */
 var nbOfSquares; /* Number of square to guess from */
+var wonAudio = new Audio('victory.wav');
+var clickAudio = new Audio('click.wav');
 
 /* First run of the game when page loads */
 play();
@@ -20,6 +22,7 @@ function play(){
     document.querySelector("#red").textContent = colorToGuess.r;
     document.querySelector("#green").textContent = colorToGuess.g;
     document.querySelector("#blue").textContent = colorToGuess.b;
+    document.querySelector("header").style.background = "#1c3030";
 
     /*  Assigns random colors to the square divs */
     for (var div of colorDivs){
@@ -48,6 +51,7 @@ function play(){
 /*  ------------------ After player clicks on the correct div square  -------------------------------------*/
 function won(){
     if (inGame) { // Check if we're playing the game.
+        wonAudio.play();
         document.querySelector("#message").innerHTML = "<span class=\"display-large\">Correct!</span>";
         document.querySelector("header").style.background = colorToGuess.hexa;
         document.querySelector("nav > p").textContent = "play again?";
@@ -61,7 +65,10 @@ function won(){
 
 /*   ----------- Manages the NEW COLORS / PLAY AGAIN ------------------------------------- */
 var newGame = document.querySelector("nav > p");
-newGame.addEventListener("click", play);
+newGame.addEventListener("click", function(){
+    clickAudio.play();
+    play();
+});
 
 
 /*   ------------ Manages easy / hard -------------------------------------
@@ -75,6 +82,7 @@ var difficulties = document.querySelectorAll("#difficulty p"); /* 0 = easy, 1 = 
 
 /* EASY button click handler */
 difficulties[0].addEventListener("click", function(){
+    clickAudio.play();
     difficulties[1].classList.remove("selected");
     difficulties[0].classList.add("selected");
 
@@ -90,7 +98,8 @@ difficulties[0].addEventListener("click", function(){
 
 /* HARD button click handler */
 difficulties[1].addEventListener("click", function(){
-   difficulties[0].classList.remove("selected");
+    clickAudio.play();
+    difficulties[0].classList.remove("selected");
     difficulties[1].classList.add("selected");
 
     // Displays first and second row
