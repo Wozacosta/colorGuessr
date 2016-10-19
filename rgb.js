@@ -78,13 +78,14 @@ newGame.addEventListener("click", function(){
 *
 *       + gives the EASY/HARD button a custom style (through class .selected) if selected
 * */
-var difficulties = document.querySelectorAll("#difficulty p"); /* 0 = easy, 1 = hard */
+var easyBtn = document.querySelectorAll("#difficulty p")[0];
+var hardBtn = document.querySelectorAll("#difficulty p")[1];
 
 /* EASY button click handler */
-difficulties[0].addEventListener("click", function(){
+easyBtn.addEventListener("click", function(){
     clickAudio.play();
-    difficulties[1].classList.remove("selected");
-    difficulties[0].classList.add("selected");
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
 
     // Displays only first row
     var secondRow = document.querySelectorAll(".container > div")[1];
@@ -97,10 +98,10 @@ difficulties[0].addEventListener("click", function(){
 });
 
 /* HARD button click handler */
-difficulties[1].addEventListener("click", function(){
+hardBtn.addEventListener("click", function(){
     clickAudio.play();
-    difficulties[0].classList.remove("selected");
-    difficulties[1].classList.add("selected");
+    easyBtn.classList.remove("selected");
+    hardBtn.classList.add("selected");
 
     // Displays first and second row
     var secondRow = document.querySelectorAll(".container > div")[1];
