@@ -4,6 +4,7 @@ body{
     box-sizing: border-box;
     margin: 0;
 }
+/* --------------------------- HEADER / TITLE --------------------------- */
 
 #red{
     text-shadow: 2px 2px 12px red;
@@ -35,6 +36,9 @@ header h1{
     font-size: 4rem;
 }
 
+
+
+/*  --------------------------- NAV BUTTONS + message  --------------------------- */
 
 nav{
     background: white;
@@ -97,6 +101,11 @@ nav>p:hover, #difficulty p:hover{
     background: #6E0031;; /* Same as in header and nav */
 }
 
+
+
+
+/*  --------------------------- COLORED DIV SQUARES  --------------------------- */
+
 .container{
     text-align: center;
     margin-top: 20px;
@@ -106,7 +115,6 @@ nav>p:hover, #difficulty p:hover{
 .row{
     max-width: 600px;
     margin: 0 auto 20px;
-
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -115,7 +123,6 @@ nav>p:hover, #difficulty p:hover{
 .row div{
     width: 30%;
     height: 150px;
-    /*margin-right: 20px;*/
     border-radius: 15px;
     transition: opacity 2s;
 }
@@ -124,26 +131,23 @@ nav>p:hover, #difficulty p:hover{
     opacity: 0;
 }
 
+
+
+
+/*  --------------------------- MEDIA QUERIES FOR SMALL WINDOWS / PHONES  --------------------------- */
+
 @media (max-width: 800px), handheld{
-    header h2{
-        display: none;
-        /*border: 3px solid red;*/
-    }
 
     header h1{
         font-size: 3rem;
     }
-
-    .display-large {
+        /*Only displays some text messages (THE GREAT / GUESSING GAME / Message like "CORRECT") if screen size allows it */
+    .display-large, #message, header h2 {
         display: none;
     }
     .row{
         margin-bottom: 0px;
         justify-content:  center;
-    }
-
-    #message{
-        display: none;
     }
 
     nav > p{
@@ -155,6 +159,8 @@ nav>p:hover, #difficulty p:hover{
         width: 33%;
         border-radius: 0px;
     }
+
+    /* Gives rounded borders to the 4 corner divs */
 
     .row:first-child div:first-child{
         border-top-left-radius: 20px;
@@ -170,6 +176,7 @@ nav>p:hover, #difficulty p:hover{
     }
 }
 
+/* IN HARD MODE and when viewing website in landscape mode on phone/tablet, LOWER HEIGHT OF SQUARE DIVS SO THAT THEY CAN FIT */
 @media (orientation: landscape) and (max-width: 800px){
     .row div{
         height: 100px;
