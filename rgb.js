@@ -67,6 +67,9 @@ function won(){
 var newGame = document.querySelector("nav > p");
 newGame.addEventListener("click", function(){
     clickAudio.play();
+    for (var div of colorDivs) {
+        div.classList.remove("clicked");
+    }
     play();
 });
 
