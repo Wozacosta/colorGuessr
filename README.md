@@ -1,6 +1,5 @@
 # colorGuessr
 
-Made while studying :
+Helpful to train your rgb skills.
 
-https://www.udemy.com/the-web-developer-bootcamp/
-
+[todo - backend score-keeping feature]
